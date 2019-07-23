@@ -1,0 +1,21 @@
+[user]
+	email = thor@tide-pool.ca
+	name = Thor Kell
+[core]
+	excludesfile = /Users/thor/.gitignore
+[alias]
+	br = branch
+	ci = commit
+	st = status
+	d = diff
+	lg = log
+	co = checkout
+	cob = checkout -b
+	cm = !git add -A && git commit -m
+	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+	bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | gxargs -r git branch -d; }; f"
+	done = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
+
+
+[push]
+	default = matching
