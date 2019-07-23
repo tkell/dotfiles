@@ -24,7 +24,16 @@ local git_branch='$(git_prompt_info)%{$reset_color%}'
 
 # pyenv fun
 get_pyenv () {
-  version=`pyenv version`
+  IFS=$'\n'
+  version_array=($(pyenv version))
+  IFS=$' \t\n' # reset the IFS!
+  version=$version_array[1] # zsh arrays are indexed from 1 
+  if [[ "$#version_array" =~ 1 ]]; then
+	  more_than_one_version=""
+  else
+	  more_than_one_version="*"
+  fi
+
   python_version=`echo $version | cut -d' ' -f1`
   python_location=`echo $version | cut -d' ' -f4`
   if [[ "$python_location" =~ "/Users/thor/.pyenv/version" ]]; then
@@ -32,7 +41,7 @@ get_pyenv () {
   else
 	  python_mode="local"
   fi
-  echo "$python_version ($python_mode)"
+  echo "$python_version ($python_mode)$more_than_one_version"
 }
 pyenv_prompt='%{$fg[green]%}$(get_pyenv)%{$reset_color%}'
 
