@@ -1,2 +1,2 @@
 # dotfiles
-minimal, split between work and personal, probably inconsistent
+minimal, trying to make this a bit more real
