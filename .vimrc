@@ -22,6 +22,20 @@ if has("autocmd")
     filetype plugin indent on
 endif
 
+" Copliot Things
+" Turn copilot off by filetype
+let g:copilot_filetypes = {'markdown': v:false, 'text': v:false}
+" Turn copilot off when I start a Python comment ...
+augroup copilot_off_when_commenting
+    autocmd!
+    autocmd InsertCharPre *.py if v:char =~'#' | let b:copilot_enabled = 0 | endif 
+augroup END
+" ... and back on when I leave Insert mode
+augroup copilot_on_when_leaving_insert
+    autocmd!
+    autocmd InsertLeave *.py let b:copilot_enabled = 1
+augroup END
+
 " Using Vim8+ native plugins, see ~/.vim/pack/plugins
 " Lightline plugin tweak + config
 set laststatus=2
