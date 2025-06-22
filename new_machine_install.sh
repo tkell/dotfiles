@@ -21,6 +21,9 @@ brew install fzf
 # uv -- this is new for 2025
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
+# ruff
+brew install ruff
+
 # ruby, gem, rbenv
 brew install ruby
 brew install rbenv
@@ -38,7 +41,15 @@ alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 dot remote add origin git@github.com:tkell/dotfiles.git
 dot pull origin master
 
-# install vim plugins, hmm
+# install vim plugins, I guess
+
+# Lightline
+git clone https://github.com/itchyny/lightline.vim ~/.vim/pack/plugins/start/lightline
+
+# ALE
+mkdir -p ~/.vim/pack/git-plugins/start
+git clone --depth 1 https://github.com/dense-analysis/ale.git ~/.vim/pack/git-plugins/start/ale
+
 
 # move theme file and go go go!
 cp bira-tk.zsh-theme .oh-my-zsh/themes

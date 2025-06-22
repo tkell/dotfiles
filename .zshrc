@@ -41,6 +41,7 @@ bindkey '^h' backward-word
 bindkey '^n' forward-word
 alias v="vim"
 alias a="ack"
+alias ccc="cd /Volumes/Bragi/Code"
 
 jcat () {
   cat $1 | jq . | less
