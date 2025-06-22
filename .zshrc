@@ -1,6 +1,9 @@
+# As of June 2025, this repo is using the --bare git repo magic, 
+# from e.g. https://harfangk.github.io/2016/09/18/manage-dotfiles-with-a-git-bare-repository.html
+
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/thor/.oh-my-zsh
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="bira-tk"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
@@ -8,21 +11,17 @@ ZSH_THEME="bira-tk"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
-
 source $ZSH/oh-my-zsh.sh
-# Remember that I manually added pyenv support
-# to the bira themre in ~/.oh-my-zsh/themes/bira
 
 # brew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# User configuration
+# uv
+source $HOME/.local/bin/env
+
+# User configuration, with magic dotfiles
 export EDITOR='vim'
-# export MANPATH="/usr/local/man:$MANPATH"
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 
 # Fuzzy Search
 source <(fzf --zsh)

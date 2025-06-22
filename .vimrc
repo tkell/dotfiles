@@ -19,7 +19,7 @@ set backspace=indent,eol,start
 au BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
-# react annoyance
+" react annoyance
 au BufNewFile,BufReadPost *.tsx, *.jsx set filetype=typescriptreact
 autocmd FileType typescriptreact setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab
 
@@ -49,7 +49,7 @@ let g:lightline = {'colorscheme': 'solarized'}
 let g:ale_linters = {"python": ["ruff", "ruff_format"], "javascript": ["eslint"], "typescript": ["eslint"]}
 let g:ale_fixers = {"python": ["ruff", "ruff_format"]}
 let g:ale_sign_error = "❌"
-let g:ale_sign_warning = "⚠️
+let g:ale_sign_warning = "!"
 let g:ale_fix_on_save = 1
 highlight ALEErrorSign ctermbg=None ctermfg=red
 highlight ALEWarningSign ctermbg=None ctermfg=yellow

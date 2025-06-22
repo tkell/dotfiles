@@ -12,7 +12,7 @@
 	co = checkout
 	cob = checkout -b
 	get-default-branch = ! basename $(git rev-parse --abbrev-ref origin/HEAD)
-	default ! git switch "$(git get-default-branch)"
+	default = ! git switch "$(git get-default-branch)"
 	cm = !git add -A && git commit -m
 	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 	bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | gxargs -r git branch -d; }; f"
