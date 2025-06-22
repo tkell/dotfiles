@@ -1,7 +1,5 @@
-**.swp
 .DS_Store
+._*
+**.swp
 **.pyc
 .python-version
-.ackrc
-.flake8
-

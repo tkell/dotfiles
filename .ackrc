@@ -1,0 +1,3 @@
+# For Rails
+--ignore-dir=log
+--ignore-dir=public
