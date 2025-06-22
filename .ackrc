@@ -1,3 +1,6 @@
 # For Rails
 --ignore-dir=log
 --ignore-dir=public
+
+# Python + MyPy
+--ignore-dir=.mypy_cache
