@@ -1,5 +1,9 @@
 theme = Builtin Solarized Dark
 
+font-family = Berkeley Mono
+font-style = Regular
+font-size = 18
+
 keybind = cmd+right=next_tab
 keybind = cmd+left=previous_tab
 keybind = cmd+shift+right=move_tab:1
